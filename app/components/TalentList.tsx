@@ -87,7 +87,7 @@ export default function TalentList() {
 
   return (
     <div className="flex flex-row justify-between gap-32 border-1 border-black p-10">
-      <form onSubmit={handleSubmit} style={{ marginTop: "1rem" }}>
+      <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-3">
         <h3>Apply</h3>
 
         <div>
@@ -96,6 +96,7 @@ export default function TalentList() {
             placeholder="Full name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className="border"
           />
           {formErrors.name && (
             <small style={{ color: "red" }}>{formErrors.name}</small>
@@ -108,6 +109,7 @@ export default function TalentList() {
             placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="border"
           />
           {formErrors.email && (
             <small style={{ color: "red" }}>{formErrors.email}</small>
@@ -115,14 +117,18 @@ export default function TalentList() {
         </div>
 
         <div>
-          <select value={userSkill} onChange={(e) => setUserSkill(e.target.value)}>
+          <select
+            value={userSkill}
+            onChange={(e) => setUserSkill(e.target.value)}
+             className="border"
+          >
             <option value="Frontend">Frontend</option>
             <option value="Backend">Backend</option>
             <option value="Fullstack">Fullstack</option>
           </select>
         </div>
 
-        <button type="submit">Apply</button>
+        <button type="submit" className="bg-black text-white px-6 cursor-pointer">Apply</button>
       </form>
       <div>
         <h2>Talent Browser</h2>
